@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        overflow: hidden;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .image-logo {
+        width: 50px;
+        border: 2px solid green;
+        height: 50px;
+        margin-right: 100px;
+    }
+
+    .mainNav {
+        display: flex;
+        background-color: royalblue;
+        padding: 12px;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        width: 100%;
+        margin-left: 100px;
+        border: 2px solid green;
+    }
+
+    ul>li {
+        margin: 15px;
+        /* margin-bottom: 15px;
+        margin-right: 100px;
+        margin-left: 100px; */
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="mainNav">
+            <div class="image-banner">
+                <img src="./egg.png" alt="logo" class="image-logo" style="margin-top: 7px;">
+            </div>
+            <div class="navBar">
+                <ul class="navList">
+                    <li class="navItem"><a href="">HOME</a></li>
+                    <li class="navItem"><a href="">PROFILE</a></li>
+                    <li class="navItem"><a href="">ABOUT</a></li>
+                    <li class="navItem"><a href="">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="profileImage">
+                <img src="./image.png" alt="logo" class="image-logo" style="margin-top: 7px;">
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
