@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
 </head>
 <style>
     * {
@@ -13,61 +16,135 @@
         padding: 0;
         text-decoration: none;
         list-style: none;
-        overflow: hidden;
     }
 
-    nav {
+    .container {
+        background-color: rgb(237, 237, 238);
         width: 100%;
+        margin: auto;
     }
 
-    .image-logo {
-        width: 50px;
-        border: 2px solid green;
-        height: 50px;
-        margin-right: 100px;
-    }
 
     .mainNav {
         display: flex;
-        background-color: royalblue;
-        padding: 12px;
+        height: 60px;
+        padding: 20px 0;
         justify-content: space-between;
+        align-items: center;
     }
 
-    ul {
+    .icon {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 333;
+        display: none;
+        font-size: 25px;
+    }
+
+    .navImage,
+    .profileImage {
+        width: 50px;
+        height: 50px;
+        margin: 0 35px;
+        margin-top: 7px;
+        cursor: pointer;
+    }
+
+
+    .mainNav ul {
         display: flex;
-        width: 100%;
-        margin-left: 100px;
-        border: 2px solid green;
+        flex: 1;
     }
 
-    ul>li {
-        margin: 15px;
-        /* margin-bottom: 15px;
-        margin-right: 100px;
-        margin-left: 100px; */
+    .mainNav ul li {
+        padding: 0 20px;
+    }
+
+    .mainNav ul li a {
+        color: black;
+        font-weight: bold;
+        font-size: 17px;
+        padding-bottom: 5px;
+    }
+
+    a:hover,
+    .current {
+        border-bottom: 2px solid black;
+    }
+
+    @media(max-width: 700px) {
+        .icon:hover {
+            opacity: 0.5;
+        }
+
+        .icon {
+            display: block;
+        }
+
+        .icon.show {
+            transform: rotateX(30deg);
+        }
+
+        .mainNav ul {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #f2f2f2;
+            width: 70%;
+            height: 100%;
+            transform: translateX(-500px);
+            border-right: rgb(245, 245, 245) solid 1px;
+            opacity: 0.7;
+            padding: 30px;
+            transition: transform 1s ease-in-out;
+        }
+
+
+        .profileImage {
+            margin-right: 50px;
+        }
+
+        .mainNav ul li {
+            padding: 20px;
+            border-bottom: #ccc solid 1px;
+        }
+
+        .mainNav ul li:last-child {
+            border: none;
+        }
+
+        .mainNav ul.show {
+            transform: translateX(-20px);
+        }
     }
 </style>
 
 <body>
-    <nav>
-        <div class="mainNav">
-            <div class="image-banner">
-                <img src="./egg.png" alt="logo" class="image-logo" style="margin-top: 7px;">
-            </div>
-            <div class="navBar">
-                <ul class="navList">
-                    <li class="navItem"><a href="">HOME</a></li>
-                    <li class="navItem"><a href="">PROFILE</a></li>
-                    <li class="navItem"><a href="">ABOUT</a></li>
-                    <li class="navItem"><a href="">CONTACT US</a></li>
-                </ul>
-            </div>
-            <div class="profileImage">
-                <img src="./image.png" alt="logo" class="image-logo" style="margin-top: 7px;">
-            </div>
-        </div>
-    </nav>
+    <div class="icon fas fa-bars"> </div>
+    <div class="container">
+        <nav class="mainNav">
+            <img src="./egg.png" alt="logo" class="navImage">
+            <ul class="mainMenu">
+                <li><a class="link current" href="">HOME</a></li>
+                <li><a class="link" href="">PROFILE</a></li>
+                <li><a class="link" href="">ABOUT</a></li>
+                <li><a class="link" href="">CONTACT US</a></li>
+            </ul>
+            <img src="./image.png" alt="logo" class="profileImage">
+        </nav>
+    </div>
 </body>
+
+
+<script>
+
+    document.querySelector('.icon').addEventListener('click', () => {
+        document.querySelector('.mainMenu').classList.toggle('show')
+    })
+
+</script>
 
 </html>
